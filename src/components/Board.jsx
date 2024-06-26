@@ -10,9 +10,9 @@ const Board = ({ allBoxes, boxes, handleBoxClick, playerBox, showPrize }) => {
   const box = allBoxes.find(({ key }) => key === playerBox);
 
   return (
-    <div className="Board">
-      <div className="Board-main">
-        <div className="Side-column">
+    <div className="board">
+      <div className="side-column left">
+        <div>
           {firstHalfBoxes.map(({ key, isOpened, value }) => (
             <div
               key={`circle-${key}`}
@@ -22,10 +22,29 @@ const Board = ({ allBoxes, boxes, handleBoxClick, playerBox, showPrize }) => {
             </div>
           ))}
         </div>
-        <div className="Main-column">
-          {!box ? null : showPrize ? box.value : `Tu caja es ${box.label}`}
+      </div>
+      <div className="main-column">
+        <div>
+          <h1>
+            <span className="gold">¡</span>Allá tú
+            <span className="gold">!</span>
+          </h1>
+          {box && !showPrize ? (
+            <>
+              <div className="text-big">Tu caja es</div>
+              <Box onClick={null} label={box.label} size="big white" />
+            </>
+          ) : box && showPrize ? (
+            <div className="text-big">
+              🎉
+              <br />
+              {box.value}
+            </div>
+          ) : null}
         </div>
-        <div className="Side-column Right">
+      </div>
+      <div className="side-column right">
+        <div>
           {secondHalfBoxes.map(({ key, isOpened, value }) => (
             <div
               key={`circle-${key}`}
@@ -36,8 +55,8 @@ const Board = ({ allBoxes, boxes, handleBoxClick, playerBox, showPrize }) => {
           ))}
         </div>
       </div>
-      <div className="Board-top">
-        <div className="Box-wrapper">
+      <div className="boxes">
+        <div>
           {boxes.map(({ key, label, isOpened }) => (
             <Box
               key={key}

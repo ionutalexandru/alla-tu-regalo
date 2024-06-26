@@ -37,17 +37,14 @@ const Banker = ({
     );
   } else if (isRinging) {
     return (
-      <div>
-        <IconButton
+      <div className="ringer">
+        <CallIcon
           onClick={() => {
             setOpen(true);
             setIsRinging(false);
           }}
-          variant="plain"
-          style={{ position: "absolute", bottom: "1rem", right: "1rem" }}
-        >
-          <CallIcon />
-        </IconButton>
+          className="ringer-icon"
+        />
       </div>
     );
   } else {
