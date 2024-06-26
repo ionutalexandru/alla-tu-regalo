@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+body {
+ font-family: "Inter", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Box-wrapper {
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  gap: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Box {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  background-color: white;
+}
+
+.Box-closed {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.Board {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   flex-direction: column;
+}
+
+.Board-top {
+  width: 100%;
+}
+
+.Board-main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.Side-column {
+  width: 15%;
+  background-color: tomato;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Side-column.Right {
+  align-items: flex-end;
+}
+
+.Main-column {
+  flex-grow: 1;
+  background-color: aqua;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Round {
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  border-radius: 50%;
+  background-color: white;
+  margin: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Round-open {
+  border-radius: 25px;
+}
+
+.Round span {
+  font-size: 0.75rem;
+  padding: 0.5rem;
 }
